@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AmarSolar AR</title>
+    <title>Jessica Mozão</title>
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene 
-      embedded 
+    <a-scene
+      embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
       vr-mode-ui="enabled: false"
     >
-      <!-- Câmera -->
+
+      <!-- Câmera do dispositivo -->
       <a-entity camera></a-entity>
 
-      <!-- Marcador Hiro padrão -->
+      <!-- Marcador Hiro: ativa a experiência -->
       <a-marker preset="hiro">
-        <!-- Imagem flutuando -->
+
+        <!-- Foto do casal (trocar por imagem personalizada) -->
         <a-image 
           src="imagem.png"
-          position="0 1 0"
+          position="0 0.8 0"
           rotation="-90 0 0"
-          height="1"
-          width="1"
+          width="1.1"
+          height="0.62"
           material="side: double">
         </a-image>
+
+        <!-- Texto orbitando a imagem -->
+        <a-entity
+          position="0 0.8 0"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
+
+          <a-text 
+            value="Com você, todos os dias são extraordinários. Te amar é a coisa mais certa que já fiz. ❤️"
+            color="#FFC800"
+            align="center"
+            width="6"
+            position="2 0 0"
+            rotation="0 0 90"
+            side="double">
+          </a-text>
+
+        </a-entity>
+
       </a-marker>
     </a-scene>
   </body>
